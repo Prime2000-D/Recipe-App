@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   
+    <div class="mobile-container">
+        <div class="recipe-detail-container">
+           <!-- Detail instruction of making of recipe -->
+        </div>
+        <div class="header nav">
+            <button class="nav-bar">≡</button>
+            <div class="logo">allrecipes🍴</div>
+            <button class="search-btn" onclick="getFocus()" >🔍</button>
+        </div>
+        <div class="search-bar hidden">
+            <input type="text" placeholder="Search" >
+        </div>
+        <div class="fav-list" id='meal-list'>
+            <div class="food">
+                <button class="close-btn">⨯</button>
+                <img src=" https://spoonacular.com/recipeImages/579247-312x231.jpg" alt="" class="food-img">
+                <div class="food-name" value = 'cake'>Cake</div>
+            </div>
+            <div class="food">
+                <button class="close-btn">⨯</button>
+                <img src="https://images.spoonacular.com/file/wximages/399929-312x231.jpg" alt="" class="food-img">
+                <div class="food-name" value = 'pasta'>Pasta</div>
+            </div>
+            <div class="food">
+                <button class="close-btn">⨯</button>
+                <img src="https://images.spoonacular.com/file/wximages/224792-312x231.jpg" alt="" class="food-img">
+                <div class="food-name" value = 'bread'>Bread</div>
+            </div>
+            <div class="food">
+                <button class="close-btn">⨯</button>
+                <img src="https://images.spoonacular.com/file/wximages/426348-312x231.jpg" alt="" class="food-img">
+                <div class="food-name" value = 'chicken'>Chicken</div>
+            </div>
+        </div>
+        <div class="meals-container" id="meals">
+            <!--  -->
+        </div>
+        <div class="footer">
+            <div class="logo">allrecipes🍴</div>
+            <ul class = 'social-media'>
+                <li><img src="./img/icons8-facebook-f-96.png" alt=""></li>
+                <li><img src="./img/icons8-google-96.png" alt=""></li>
+            </ul>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms</a></li>
+            </ul>
+            <p>© 2021 primelab all right reserved.</p>
+        </div>
+    </div>
+    <script src="./node_modules/elements-x/dist/carousel/index.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

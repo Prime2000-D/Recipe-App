@@ -1,0 +1,336 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(248, 248, 248);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'roboto', Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+/* Mobile container */
+.mobile-container{
+    position: relative;
+    margin: 0.5em 0;
+    background-color: white;
+    width: 25em;
+    height: 35em;
+    box-shadow: 0 0 5px silver;
+    border-radius: 2px;   
+    overflow-y: scroll;
+}
+.mobile-container::-webkit-scrollbar{
+    display: inline-block;
+    width: 10px;
+}
+
+.mobile-container::-webkit-scrollbar-thumb {
+    display: flex;
+    border-radius: 30px;
+    background-color: rgb(203, 222, 238);
+}
+.mobile-container::-webkit-scrollbar-track{
+    background-color: rgb(234, 239, 247);
+}
+/* Recipe information */
+.recipe-detail-container{
+    display: none;
+    position: fixed;
+    height: 35em;
+    width: 25em;
+    background-color: rgba(231, 215, 247, 0.39);
+    z-index: 2;
+    overflow:hidden;
+    
+}
+.detail-close-btn{
+    flex-direction: row;
+    align-self: flex-end;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0.3em;
+    padding: 0.2em;
+}
+.recipe-detail{
+    position: absolute;
+    top: 0;
+    height: 34em;
+    background-color: rgb(246, 253, 255);
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    
+}
+.recipe-detail::-webkit-scrollbar {
+    display: none;
+  }
+.recipe-img{
+    width: 75%;
+    margin: 0.5em;
+    padding: 1em;
+    background-color: rgb(196, 208, 247);
+}
+.recipe-instruction{
+    margin: 0.5em 1em;
+}
+.instruction p{
+    margin: 0.5em;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.instruction h3{
+    margin-left: 0.5em;
+    font-size: large;
+    font-weight: 600;
+}
+.ingredients{
+    margin: 1em 0em;
+}
+.ingredients ul li{
+    margin: 0.2em 1em;
+}
+.ingredients ul{
+    margin-left: 1em;
+    list-style: decimal;
+}
+/* Navigation */
+.nav{
+    width: 100%;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav-bar{
+    margin-left: -1.2em;
+    padding: 0 0.2em;
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: rgb(62, 165, 199);
+    outline: none;
+    user-select: none;
+}
+.logo{
+    font-size: 24px;
+    color: rgb(20, 181, 192);
+    padding: 0.2em;
+    user-select: none;
+}
+.search-btn{
+    margin-right: -2em;
+    padding: 0.5em;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+/* Seacrh section */
+.search-bar{
+    padding: 0.5em;
+    background-color: rgb(247, 253, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all 0.5s ease;
+}
+.search-bar input{
+    padding: 0.4em;
+    padding-left: 15px;
+    width: 20em;
+    font-size: 15px;
+    outline: none;
+    background-color: rgb(247, 247, 247);
+    border: 1px solid rgba(128, 128, 128, 0.322);
+    border-radius: 20px;
+}
+.search-bar input::placeholder{
+    font-style: italic;
+    color:rgb(77, 77, 77);
+}
+.hidden{
+    display: none;
+}
+
+
+
+/* Favouite list container */
+.fav-list{
+    position: relative;
+    padding-top: 10px;
+    padding: 0 0.4em;
+    background-color: rgb(244, 246, 248);
+    height: 11em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border-top: 5px solid rgb(235, 243, 248);
+    border-bottom: 5px solid rgb(235, 243, 248);
+    overflow: scroll;
+    white-space: nowrap;
+    overflow-y: hidden;
+   
+}
+.fav-list::-webkit-scrollbar{
+    display: none;
+}
+
+.food{
+    position: relative;
+    width: 6em;
+    height: 8em;
+    margin: 0.3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between
+}
+
+.close-btn{
+    position: absolute;
+    flex-direction: row;
+    align-self: flex-end;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
+.food:hover .close-btn{
+    display: block;
+}
+.food-img{  
+    width: 6em;
+    height: 6em;
+    border-radius: 100%;
+    border: thick double rgb(208, 226, 223);
+    box-shadow: 0 0 10px rgba(173, 121, 121, 0.3);
+    image-rendering: pixelated;
+    cursor: pointer;
+}
+.food-name{
+    margin-top: 0.5em;
+    width: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(66, 66, 66);
+    text-align: center;
+    white-space: pre-wrap;
+    cursor: pointer;
+}
+.fav-food{
+    position: relative;
+    height: 50%;
+    background-color: whitesmoke;
+    margin: 0.8em;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(189, 189, 189);
+}
+.fav-food-img{
+    border-radius: inherit;
+    width:100%;
+    height: 15em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.tag{
+    position: absolute;
+    color:grey;
+    background-color: white;
+    padding: 0.3em 1em;
+    border-radius: 0 4px 4px 0;
+    margin-top: 1em;
+    font-weight: 600;
+    z-index: 1;
+}
+.meal-body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fav-food-name{
+    padding: 0.8em;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(66, 66, 66);
+}
+.fav-btn{
+    border: none;
+    font-size: 25px;
+    background-color: transparent;
+    color: grey;
+    margin-right: 0.5em;
+    cursor: pointer;
+    outline: none;
+}
+.active{
+    border: none;
+    font-size: 25px;
+    background-color: transparent;
+    color: rgb(241, 83, 83);
+    margin-right: 0.5em;
+    cursor: pointer;
+
+}
+
+.empty-list{
+    display:flex; 
+    justify-content:center; 
+    white-space:pre-wrap; 
+    text-align:center;
+}
+
+.footer{
+    background-color: rgb(43, 43, 43);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.social-media{
+    list-style: none;
+    display: flex;
+    margin: 0.2em;
+}
+.social-media li{
+    margin: 0 0.5em;
+    padding: 0.2em;
+    padding-bottom: 0;
+    background-color: white;
+    border-radius: 2px;
+}
+.social-media img{
+    width: 1.2em;
+    height: 1.2em;
+    cursor: pointer;
+}
+.footer ul{
+    list-style: none;
+    display: flex;
+    margin: 0.2em;
+}
+.footer li{
+    margin: 0.2em 0.5em;
+}
+.footer li a{
+    color: white;
+    text-decoration: none;
+}
+.footer p{
+    font-size: small;
+    font-weight: 200;
+    margin: 0.5em;
+}
